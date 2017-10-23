@@ -1,3 +1,63 @@
 page-home {
+   .grid {
+        padding: 0;
+    }
+    .slider-img {
+        height: 220px;
+        width: 100%;
+        position: relative;
+        z-index: -111;
+    }
+    .slide-zoom {
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+     .grid .slides .overlay {
+        background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(rgba(0,0,0,.4)));
+        background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4));
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+    }
+    .grid .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2em;
+        width: 100%;
+        font-weight: 700;
+        color: #fff;
+    }
+    .categories {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .categories img {
+        height: 110px;
+        width: 100%;
+        position: relative;
+        z-index: -111;
+    }
+    .categories .text-over-img {
+        color: #fff;
+        font-size: 18px;
+        padding: 5px;
+        background-color: rgba(119,119,119,.6);
+        position: relative;
+        width: 100%;
+        margin: -34px 0 0;
+        text-align: center;
+    }
+    .cart-icon-nav {
+        right: 12px;
+    }
+    
+    .cart-icon-nav, .carts {
+        position: absolute;
+        top: -3px;
+        cursor: pointer;
+    }
 
 }

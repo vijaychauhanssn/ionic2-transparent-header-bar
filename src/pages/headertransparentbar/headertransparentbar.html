@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar [class.show-background]="showToolbar">
+      <ion-title [hidden]="!showToolbar">Header-transparent</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content  class="content"
+                (ionScroll)="onScroll($event)"
+                [class.transition]="transition"
+                [style.background-size]="headerImgSize"
+                [style.background-image]="'url('+ headerImgUrl+ ')'">
+  
+    <div class="user-info">
+      <img src="assets/imgs/shutterstock_114177826_mm6tnl.jpg" alt="">
+      <h4>Header-transparent</h4>
+      <p>This is simple header-transpanrent bar.</p>
+    </div>
+  
+    <div class="articles">
+  
+      <div class="article-item" *ngFor=" let i of articles">
+        <img src="assets/imgs/menu-bg.jpg" alt="">
+        <div class="placeholders">
+          <span class="placeholder "></span>
+          <span class="placeholder "></span>
+          <span class="placeholder "></span>
+          <span class="placeholder p20"></span>
+        </div>
+      </div>
+  
+    </div>
+  </ion-content>
+  

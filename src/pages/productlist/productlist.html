@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Product List</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-searchbar placeholder="Type Item-Name" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
+   
+
+     <ion-list>
+        <ion-item *ngFor="let item of productList" >
+         
+          <ion-row>
+            <ion-col>
+              <ion-item *ngFor="let post of posts">
+                <img [src]="post.pic"/>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <p class="item-name">{{item.name}}</p>
+              <p class="item-detail">Disertante: {{item.detail}}
+                <span>Cum sociis natoque penatibus et magnis dis parturi...</span>
+              </p>
+              <p class="item-detail">Price : <span class="item-price">$ 4
+              </span> </p>
+            </ion-col>
+          </ion-row>
+
+        </ion-item>
+      </ion-list>
+</ion-content>

@@ -1,1 +1,67 @@
 <ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-content class="sidebar-menu">
+        <ion-row class="img-name-row">
+            <ion-col col-12>
+                <img class="user-img" src="assets/imgs/profile.jpg">
+            </ion-col>
+        </ion-row>
+        <ion-list no-lines>
+            <ion-item class="bg-transparent">
+                <ion-icon name="home" item-start></ion-icon>
+                Home
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="apps" item-start></ion-icon>
+                Category
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="pricetag" item-start></ion-icon>
+                Offers
+                <ion-badge class="menu-badge badge item-end">6</ion-badge>
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="cart" item-start></ion-icon>
+               Mycart
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="paper" item-start></ion-icon>
+                News
+                <ion-badge class="menu-badge badge item-end">8</ion-badge>
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="call" item-start></ion-icon>
+               Contact
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="contacts" item-start></ion-icon>
+               About Us
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="log-in" item-start></ion-icon>
+               Login
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="log-in" item-start></ion-icon>
+               Singup
+            </ion-item>
+            <div class="line-item"></div>
+            <ion-item class="bg-transparent">
+                <ion-icon name="map" item-start></ion-icon>
+               Map
+            </ion-item>
+            <div class="line-item"></div>
+        </ion-list>
+        
+    </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
