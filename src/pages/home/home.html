@@ -1,5 +1,4 @@
 <ion-header>
-  
   <ion-navbar color="primary">
       <button ion-button [menuToggle]="activeMenu">
           <ion-icon name="menu"></ion-icon>
@@ -10,10 +9,23 @@
         <ion-icon name="cart"></ion-icon>
       </button>
     </ion-buttons>
-    
+    <ion-buttons end (click)="logout()">
+      LOGOUT
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content>
+    <ion-card>
+    <img [src]="profilePicture" alt="" style="height:300px"/>
+      <ion-card-header>
+        Card Header
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{fullName}}  
+      </ion-card-content>
+    
+    </ion-card>
   <ion-grid class="grid">
     <ion-row>
       <ion-slides pager>

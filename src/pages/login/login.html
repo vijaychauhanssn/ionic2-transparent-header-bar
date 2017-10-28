@@ -1,0 +1,56 @@
+<ion-content class="login" padding>
+  <form novalidate="" class="ng-pristine ng-valid ng-touched">
+    <ion-list>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <img class="logo" src="assets/imgs/logo-icon.png">
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <p text-center="">FORGOT PASSWORD ?</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <button ion-button large class="login-btn" full padding (click)="HomePage()">Login</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <p text-center="">LOGIN WITH</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col col-12 text-center>
+          <span>
+            <img class="social-icon" (click)="login()" src="assets/imgs/fb.png">
+          </span>
+          <span>
+            <img class="social-icon" (click)="loginGoogle()" src="assets/imgs/g+.png">
+          </span>
+          <span>
+            <img class="social-icon" src="assets/imgs/twitter.png">
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </form>
+
+</ion-content>
