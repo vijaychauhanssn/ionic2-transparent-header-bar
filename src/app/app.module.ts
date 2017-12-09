@@ -6,14 +6,20 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import {GooglePlus} from '@ionic-native/google-plus';
 import {AngularFireModule} from 'angularfire2';
+import { SplitPane } from '../providers/split-pane';
+import { Common } from '../providers/common';
 import firebase from 'firebase';
+import { HttpModule } from '@angular/http';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { HeadertransparentbarPage } from '../pages/headertransparentbar/headertransparentbar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { AuthService } from '../providers/auth-service';
 export const firebaseConfing={
   apiKey: "AIzaSyC7foNzzsNDbJGRPg-Xqm0siVCKEpqbOO8",
   authDomain: "auth-9c7d2.firebaseapp.com",
@@ -39,12 +45,14 @@ const cloudSettings: CloudSettings = {
     AboutPage,
     ContactPage,
     TabsPage,
+    WelcomePage,
     HomePage,
+    RegisterPage,
     LoginPage,
     HeadertransparentbarPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     AngularFireModule.initializeApp(firebaseConfing)
@@ -55,15 +63,17 @@ const cloudSettings: CloudSettings = {
     AboutPage,
     ContactPage,
     HomePage,
+    RegisterPage,
+    WelcomePage,
     TabsPage,
     LoginPage,
     HeadertransparentbarPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,GooglePlus,AuthService, SplitPane,Common,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GooglePlus
+    
   ]
 })
 export class AppModule {}

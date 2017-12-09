@@ -1,4 +1,5 @@
-<ion-content class="login" padding>
+<ion-content padding class="login">
+ <!--form novalidate="" class="ng-pristine ng-valid ng-touched"-->
     <ion-list>
       <ion-row class="row">
         <ion-col class="col" col-12="">
@@ -8,8 +9,24 @@
       <ion-row class="row">
         <ion-col class="col" col-12="">
           <ion-item>
-            <ion-label floating>Username</ion-label>
-            <ion-input type="text" value="" [(ngModel)]="userData.username"></ion-input>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" col-12="">
+          <ion-item>
+            <ion-label floating>Mobile No</ion-label>
+            <ion-input type="text" [(ngModel)]="userData.username"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -23,12 +40,7 @@
       </ion-row>
       <ion-row class="row">
         <ion-col class="col" col-12="">
-          <p text-center="">FORGOT PASSWORD ?</p>
-        </ion-col>
-      </ion-row>
-      <ion-row class="row">
-        <ion-col class="col" col-12="">
-          <button ion-button large class="login-btn" full padding (click)="login_page()">Login</button>
+          <button ion-button large class="login-btn" full padding (click)="signup()">Register</button>
         </ion-col>
       </ion-row>
       <ion-row class="row">
@@ -51,9 +63,9 @@
       </ion-row>
       <ion-row class="row">
         <ion-col class="col" col-12="">
-          <p text-center (click)="Go('RegisterPage')">REGISTER NOW !</p>
+          <p text-center>Already Have Account ? <a (click)="login_page()">Login</a></p>
         </ion-col>
       </ion-row>
     </ion-list>
-
+  <!--/form-->
 </ion-content>

@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HeadertransparentbarPage } from '../headertransparentbar/headertransparentbar';
 import { FacebookAuth, User,Auth } from '@ionic/cloud-angular';
 import { LoginPage } from '../login/login';
-
-
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -29,12 +27,11 @@ export class HomePage {
     this.navCtrl.push(HeadertransparentbarPage)
   }
 
+  
 
 logout(){
   this.auth.logout();
   this.navCtrl.setRoot(LoginPage);
 }
-Go(page){
-  this.navCtrl.push(HomePage);
-}
+
 }

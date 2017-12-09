@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import {GooglePlus} from '@ionic-native/google-plus';
 import {AngularFireModule} from 'angularfire2';
 import firebase from 'firebase';
 import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
+import {AuthService} from "../../providers/auth-service";
 import { FacebookAuth, User, AuthLoginResult } from '@ionic/cloud-angular';
 
 @IonicPage()
@@ -12,8 +14,11 @@ import { FacebookAuth, User, AuthLoginResult } from '@ionic/cloud-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  resposeData : any;
+  userData = {"username":"", "password":""};
+
 loginDettials:AuthLoginResult;
-  constructor(private googleplus:GooglePlus,  private facebook: FacebookAuth, private user: User,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,private googleplus:GooglePlus,  private facebook: FacebookAuth, private user: User, public navParams: NavParams,public authService: AuthService, private toastCtrl:ToastController) {
   }
 
   loginGoogle(){
@@ -59,9 +64,44 @@ ionViewDidLoad() {
     }
 
   }
-  
-Go(page){
-  this.navCtrl.push(HomePage);
+
+  login_page(){
+    if(this.userData.username && this.userData.password){
+     this.authService.postData(this.userData, "login").then((result) =>{
+     this.resposeData = result;
+     console.log(this.resposeData);
+     if(this.resposeData.userData){
+      localStorage.setItem('userData', JSON.stringify(this.resposeData) )
+     this.navCtrl.push(TabsPage);
+   }
+   else{
+     this.presentToast("Please give valid username and password");
+   }
+     
+     }, (err) => {
+       //Connection failed message
+     });
+    }
+    else{
+     this.presentToast("Give username and password");
+    }
+   
+   }
+ 
+   presentToast(msg) {
+     let toast = this.toastCtrl.create({
+       message: msg,
+       duration: 2000
+     });
+     toast.present();
+   }
+ 
+openHomePage():any {
+  this.navCtrl.setRoot(HomePage);
 }
+Go(page){
+  this.navCtrl.push(page);
+}
+
 
 }
